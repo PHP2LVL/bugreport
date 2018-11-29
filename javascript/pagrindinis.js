@@ -121,14 +121,22 @@ function checkedAll(frm1) {
     }
 }
 
-// Get bug coordinates
-function showCoords(event) {
-    $(document).on('click','body *',function(){
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " + x + ", Y coords: " + y;
-    document.getElementsByClassName(".pavadinimas").innerHTML = coords;
-    })
+// function showCoords(event) {
+//     getElementsByTagName('body');
+//     var x = event.clientX;
+//     var y = event.clientY;
+//     var coords = "X coords: " + x + ", Y coords: " + y;
+//     document.getElementsByClassName(".pavadinimas").innerHTML = coords;
+// }
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 
-showCoords();
+// example use
+var div = document.getElementsByTagName("body")[0];
+var divOffset = offset(div);
+console.log(divOffset.left, divOffset.top);
