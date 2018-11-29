@@ -62,6 +62,15 @@
 		</div>
 		<?php } ?>
 		<div class="sonas"></div>
+		
+		<!-- REPORT BUG BUTTON -->
+		<div class="report">
+			<button class="myBtn" title="Report bug">Report BUG</button>
+			<p id="coords"></p>
+		</div>
+		<!-- END OF REPORT BUG -->
+
+
 		<div id="kojos">
 			<div class="tekstas"><?php copyright( $conf['Copyright'] );?></div>
 			<a href="http://mightmedia.lt" target="_blank" title="Mightmedia">
@@ -75,5 +84,7 @@
 		<div class="taisom"></div>
 	</div>
 </div>
+<script src="<?php echo adresas(); ?>stiliai/apelsinas/script.js"></script>
+
 </body>
 </html>
