@@ -2,7 +2,7 @@
 .project
 priedai/conf.php
 sandeliukas/*
-sandeliukas/!.htaccess
+# sandeliukas/!.htaccess
 images/nuorodu/*
 images/nuorodu/!index.html
 images/avatars/*
@@ -19,5 +19,5 @@ siuntiniai/media/!index.html
 install-
 install--
 install/node_modules
-.htaccess
+# .htaccess
 priedai/conf.php
