@@ -456,6 +456,7 @@ if(! function_exists('utf8_substr')) {
  */
 if(! function_exists('adresas')) {
 	function adresas() {
+		//TODO: problems with admin CP
 		// if(defined('MAIN_URL')) {
 		// 	return MAIN_URL;
 		// }
