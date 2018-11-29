@@ -120,3 +120,15 @@ function checkedAll(frm1) {
         aa.elements[i].checked = checked;
     }
 }
+
+// Get bug coordinates
+function showCoords(event) {
+    $(document).on('click','body *',function(){
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementsByClassName(".pavadinimas").innerHTML = coords;
+    })
+}
+
+showCoords();
