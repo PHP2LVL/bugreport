@@ -1,0 +1,931 @@
+body {
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.first {
+    display: flex;
+    padding-top: 220px;
+    padding-bottom: 220px;
+    background-image: url("images/bg-masthead.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.second {
+    padding: 120px 0;
+    background-color: #ffffff;
+
+}
+.third {
+    background-color: #1d809f;  
+    padding-bottom: 130px;
+}
+
+.fourth {
+    padding-top: 220px;
+    padding-bottom: 220px;
+    background-image: url("images/bg-callout.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fifth {
+    padding-bottom: 150px;
+    display: flex;
+  
+}
+.seventh {
+    padding: 120px 0;
+    background-color: #1d809f;
+}
+
+.footer {
+    padding: 120px 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 300px;
+}
+
+.maps {
+    width: 100%;
+    height: 480px;
+}
+
+.textbox {
+    /* width: 650px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox2 {
+
+    width: 840px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.textbox3 {
+    padding-top: 60px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox4 {
+    /* padding-top: 350px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox5 {
+    padding-top: 50px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.textbox7 {
+    padding-top: 50px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textboxfooter {
+    /* padding-top: 50px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.first h1 {
+    font-size: 71px;
+    font-weight: bold;
+}
+
+.first h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.second h1 {
+    font-size: 27px;
+    font-weight: bold;
+}
+.second h2 {
+    font-size: 16.5px;
+}
+.third h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #b6b307;
+
+}
+
+.third h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+.fourth h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.maintext4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+
+.secondtext4 {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #bcd4d1;
+}
+.secondtext6 {
+    width: 90%;
+}
+.secondtext7 {
+    width: 70%;
+}
+.secondtext8 {
+    width: 72%;
+}
+.secondtext9 {
+    width: 71%;
+}
+
+.fifth h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecb807;
+}
+
+.fifth h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: -8px;
+    padding-bottom: 45px;
+}
+
+.seventh h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 28px;
+}
+.photobox h2 {
+    color: #ffffff;
+    font-size:  12px;
+    text-align: left;
+}
+
+.photobox p {
+    color: #ffffff;
+    text-align: left;
+    font-size: 15px;
+}
+.container-fluid {
+
+}
+
+.container {
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.button {
+    width: 185px;
+    height: 65px;
+    background-color: #1d809f;
+    border: none;
+    color: #ffffff;
+    align-self: center;
+    margin-top: 40px;
+    font-weight: bold;
+    border-radius: 4%;
+}
+
+.button2 {
+    width: 185px;
+    height: 65px;
+    background-color: #343a40;
+    border: none;
+    color: #ffffff;
+    margin-top: 40px;
+    border-radius: 4%;
+    font-weight: bold;
+}
+
+.button7-1 {
+    width: 145px;
+    height: 67px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4%;
+    color: #000000;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.button7-2 {
+    width: 160px;
+    height: 67px;
+    background-color: #343a40;
+    border: none;
+    border-radius: 4%;
+    color: #ffffff;
+    margin-top: 40px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.iconframe {
+    height: 110px;
+    width: 110px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.iconframefooter {
+    height: 65px;
+    width: 65px;
+    background-color: #1d809f;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.photobox {
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+
+#googleMap {
+    width: 100%;
+    height: 480px;
+}
+
+.copyright {
+    padding-top: 130px;
+    font-size: 11px;
+}
+
+.blue {
+    color: #1d809f;
+}
+
+.fas {
+    font-size: 40px;
+    position: relative;
+    top: 33px;
+    color: #1d809f;
+}
+
+.far {
+    font-size: 40px;
+    position: relative;
+    top: 33px;
+    color: #1d809f;
+}
+
+.iconos {
+    font-size: 40px;
+    position: relative;
+    top: 33px;
+    color: #1d809f;
+}
+
+
+.far.fa-heart {
+    font-size: 12px;
+    position: relative;
+    top: 0px;
+    color: #bcd4d1;
+}
+
+.textboxfooter .fab {
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    color: #ffffff
+}
+.textboxfooter .fas.fa-cat {
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+}
+.textboxfooter .fas.fa-bars {
+    background-color: rgba(96, 96, 96, 0.3);
+    font-size: 15px;
+    padding: 17px;
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.fas.fa-bars {
+    background-color: rgba(96, 96, 96, 0.3);
+    font-size: 15px;
+    padding: 17px;
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.fas.fa-window-close {
+    background-color: rgba(96, 96, 96, 0.3);
+    font-size: 15px;
+    padding: 17px;
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.openmenu {
+    background-color: transparent;
+    padding: 17px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+}
+.col-md-6.bg1 {
+    height: 370px;
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.col-md-6.bg1:nth-child(1) {
+    height: 370px;
+    /* background-image: url("images/portfolio-1.jpg"); */
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.col-md-6.bg1:nth-child(2) {
+    height: 370px;
+    /* background-image: url("images/portfolio-2.jpg"); */
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col-md-6.bg2:nth-child(1) {
+    height: 370px;
+    /* background-image: url("images/portfolio-3.jpg"); */
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col-md-6.bg2:nth-child(2) {
+    height: 370px;
+    /* background-image: url("images/portfolio-4.jpg"); */
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@keyframes showNav {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+
+#navh {
+    display: none;
+    background-color: #1d809f;
+    color: #ffffff;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 700px;
+    width: 200px;
+    animation: showNav 450ms ease-in-out both;
+}
+#navh a {
+    color: #ffffff;
+}
+
+#navh ul {
+    list-style: none;
+}
+
+#navh li {
+    font-size: 20px;
+    position: relative;
+    top: 70px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#navh li a {
+    text-decoration: none;
+}
+
+/* Mightmedia pagrindin�s stiliaus funkcijos */
+img {
+    border: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+hr, fieldset {
+    margin: 2px;
+    border: 1px dotted #CCC;
+}
+
+input, textarea, button, select {
+    outline: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #5d5141;
+    background: #cabfb0;
+    border: 1px solid #5d5141;
+    padding-left: 5px;
+}
+
+.editorius {
+    width: 370px;
+}
+
+input, button, select {
+    height: 20px
+}
+
+input[type="submit"], .submit, .perveiza {
+    cursor: pointer;
+    padding: 2px;
+    background: #493313 url(paveiksleliai/hover.png) repeat-x;
+    border: 1px solid #ccc;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+    padding: 2px;
+}
+
+/* BB Kodo [code] forume laukas */
+.code {
+    margin: 10px;
+    height: auto;
+    width: 95%;
+    background: #ccc;
+}
+
+textarea.input {
+    width: 90%;
+    background: #cccccc;
+}
+
+select, input.input {
+    width: 90%;
+}
+
+/*Bloko meniu*/
+#navigation {
+    width: 100%;
+    font-size: 12px;
+}
+
+#navigation ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+#navigation ul li a {
+    display: block;
+    border-bottom: 1px solid #d2ccc3;
+    padding: 5px 0px 2px 4px;
+    text-decoration: none;
+    color: #666666;
+    width: 188px;
+}
+
+#navigation ul li:hover, #navigation ul li .active {
+    color: #000000;
+    background-color: #d2ccc3;
+    position: relative;
+}
+
+/*Sub Meniu*/
+#navigation ul ul {
+    border: 0px;
+    background: #cccccc url(paveiksleliai/bloko_fonas.png) repeat-x;
+    display: none;
+    position: absolute;
+    left: 188px;
+    top: 0px;
+    z-index: 100;
+}
+
+#navigation ul li:hover ul {
+    display: block;
+}
+
+#navigation ul ul li {
+    font-size: 12px;
+    display: block;
+    padding: 0px 0px 2px 4px;
+    text-decoration: none;
+    color: #cccccc;
+    width: 188px;
+}
+
+#navigation ul ul li a {
+    width: 180px;
+}
+
+#navigation ul ul li:hover {
+
+}
+
+#navigation li:hover ul li ul {
+    display: none;
+}
+
+#navigation ul ul li ul {
+    left: 110px;
+}
+
+#navigation ul ul li:hover ul {
+    display: block;
+}
+
+/* Mygtukai profilio redagavimui bei moderatori� puslapiui */
+.blokas {
+    width: 77px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    background: #d2ccc3;
+    border: 1px solid #a88b62;
+    padding: 3px;
+    margin: 3px;
+    height: auto;
+    /*clear: both;*/
+}
+
+div.blokas a {
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    margin: 3px;
+}
+
+div.blokas a:active, div.blokas a:hover {
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+div.blokas img {
+    display: block;
+    border: 0;
+}
+
+div.blokas img:hover {
+    display: block;
+    border: 0;
+}
+
+a.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /*float: left;*/
+    cursor: pointer;
+    background: #d2ccc3;
+    border: 1px solid #a88b62;
+    padding: 3px;
+    margin: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.btn:active, a.btn:hover {
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+/* Lentel�ms */
+.table {
+    border-bottom: 2px solid #d1d1d1;
+    border-right: 2px solid #d1d1d1;
+}
+
+.th {
+    text-align: center;
+    color: #6b655c;
+    background: #d1d1d1;
+    height: 22px;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.th a {
+    color: white;
+}
+
+.tr2 {
+    padding: 5px;
+    background: #d2ccc3;
+    vertical-align: middle;
+    overflow: hidden
+}
+
+.tr {
+    padding: 5px;
+    vertical-align: middle;
+    overflow: hidden
+}
+
+.td {
+    padding-left: 5px;
+    border-left: 1px solid #d1d1d1;
+    vertical-align: middle
+}
+
+.td2 {
+    padding-left: 5px;
+    border-left: 1px solid #d1d1d1;
+    vertical-align: middle
+}
+
+table tr td {
+    padding: 1px;
+}
+
+/* Kalendoriui */
+.kalendorius table tr td {
+    border-bottom: 1px dashed #d2ccc3;
+    text-align: center;
+}
+
+.kalendorius .siandien {
+    background: #d2ccc3;
+    font-weight: bold;
+    color: #fff
+}
+
+/* Linija, po naujiena, straipsniu, siuntiniu ir t.t */
+.line {
+    border-top: 1px dashed #d2ccc3;
+    margin: 5px
+}
+
+/* Title lentel� i�okanti pel� u�vedus ant nuorodos su pavadinimu (title="") */
+.tooltip {
+    max-width: 300px;
+    padding: 3px;
+    border: 1px solid #fff;
+    display: none;
+    background: #78531f;
+    color: #fff;
+    font: 11px Arial, Helvetica, sans-serif;
+    text-align: left;
+    position: absolute;
+    z-index: 1000;
+}
+
+/* Informaciniai prane�imai */
+.klaida {
+    margin-bottom: 5px;
+    height: auto;
+    width: 100%;
+    background: #f7e66c;
+    border: 1px solid #c8bb45;
+    color: #afa233;
+}
+
+.info_tekstas {
+    color: #3d403d;
+    padding-left: 40px;
+    padding-bottom: 3px;
+}
+
+.info_pavadinimas {
+    padding-top: 3px;
+    padding-left: 40px;
+}
+
+.msg {
+    margin-bottom: 5px;
+    height: auto;
+    width: 100%;
+    background: #c3ea86;
+    border: 1px solid #a2cd5e;
+    color: #769b3d;
+}
+
+.klaida .info_ikona {
+    margin-top: 3px;
+    margin-left: 5px;
+    float: left;
+    height: 32px;
+    width: 32px;
+    background: url(paveiksleliai/warrning.png) no-repeat;
+}
+
+.msg .info_ikona {
+    margin-top: 3px;
+    margin-left: 5px;
+    float: left;
+    height: 32px;
+    width: 32px;
+    background: url(paveiksleliai/tick.png) no-repeat;
+}
+
+/* Nario avataro paveiksl�lis */
+.avataras img {
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 2px 10px 2px 2px;
+    padding: 2px;
+    float: left;
+}
+
+/* Kategorij� paveiksl�lis */
+.kat img {
+    height: 40px;
+    width: 40px;
+    background: #d2ccc3;
+    border: 1px solid #a88b62;
+    display: block;
+    margin: 2px;
+    padding: 2px;
+    float: left;
+    clear: left;
+}
+
+.forum_img {
+    max-width: 400px;
+    max-height: 400px;
+    background: #d2ccc3;
+    border: 1px solid #a88b62;
+    display: block;
+    margin: 2px;
+    padding: 2px;
+}
+
+/* Nario para�ui */
+.signature {
+    border-top: 1px dashed #fff;
+}
+
+/* Puslapiavimui */
+.puslapiavimas {
+    text-shadow: none;
+    text-align: center;
+}
+
+.puslapiavimas a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.puslapiavimas .nuoroda {
+    vertical-align: middle;
+    background: #d2ccc3;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.puslapiavimas .nuoroda:hover {
+    background: #f09c1b;
+}
+
+.puslapiavimas .paspaustas {
+    color: #fff;
+    vertical-align: middle;
+    font-weight: bold;
+    background: #f09c1b;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+/* Siustis.php puslapio siuntimosi mygtukas */
+a.siust {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    background: #d2ccc3;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+    margin: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Galerijai */
+#gallery {
+    position: relative;
+}
+
+.gallery_title, .gallery_menu {
+    background: black;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.7;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.gallery_title {
+    top: 0;
+}
+
+.gallery_menu {
+    bottom: 5px;
+}
+
+.gallery_menu img {
+    vertical-align: middle;
+}
+
+/* Apsaugos kodui */
+#captcha {
+    background: #cccccc;
+}
+
+/* Reitingavimas */
+.base {
+    background: url(paveiksleliai/ratings.png) 0 0 no-repeat;
+}
+
+.average {
+    background: url(paveiksleliai/ratings.png) 0 -16px no-repeat;
+}
+
+.score a:hover {
+    background: url(paveiksleliai/ratings.png) bottom left no-repeat;
+}
+
+/* Galerijos fotoalbumams */
+.albumas {
+    text-align: center;
+    float: left;
+    padding: 5px;
+    background: #d2ccc3;
+    border: 1px solid #a88b62;
+    width: 133px;
+    height: 140px;
+    margin: 5px;
+}
+
+.albumas .foto {
+    background: #e1e1e1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100px;
+    margin-bottom: 4px;
+}
+
+.albumas .foto:hover {
+    opacity: 0.7;
+    background: #d5d5d5;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.albumas small {
+    font-size: 10px;
+}
+
+/* Mightmedia pagrindin�s stiliaus funkcijos */

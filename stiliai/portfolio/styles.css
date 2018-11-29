@@ -1,0 +1,393 @@
+body {
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.first {
+    display: flex;
+    padding-top: 220px;
+    padding-bottom: 220px;
+    background-image: url("images/bg-masthead.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.second {
+    padding: 120px 0;
+    background-color: #ffffff;
+
+}
+.third {
+    background-color: #1d809f;  
+    padding-bottom: 130px;
+}
+
+.fourth {
+    padding-top: 220px;
+    padding-bottom: 220px;
+    background-image: url("images/bg-callout.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fifth {
+    padding-bottom: 150px;
+  
+}
+.seventh {
+    padding: 120px 0;
+    background-color: #1d809f;
+}
+
+.footer {
+    padding: 120px 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 300px;
+}
+
+.maps {
+    width: 100%;
+    height: 480px;
+}
+
+.textbox {
+    /* width: 650px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox2 {
+
+    width: 840px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.textbox3 {
+    padding-top: 60px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox4 {
+    /* padding-top: 350px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textbox5 {
+    padding-top: 50px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.textbox7 {
+    padding-top: 50px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.textboxfooter {
+    /* padding-top: 50px; */
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.first h1 {
+    font-size: 71px;
+    font-weight: bold;
+}
+
+.first h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.second h1 {
+    font-size: 27px;
+    font-weight: bold;
+}
+.second h2 {
+    font-size: 16.5px;
+}
+.third h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #b6b307;
+
+}
+
+.third h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+.fourth h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.maintext4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+
+.secondtext4 {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #bcd4d1;
+}
+.secondtext6 {
+    width: 90%;
+}
+.secondtext7 {
+    width: 70%;
+}
+.secondtext8 {
+    width: 72%;
+}
+.secondtext9 {
+    width: 71%;
+}
+
+.fifth h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecb807;
+}
+
+.fifth h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: -8px;
+    padding-bottom: 45px;
+}
+
+.seventh h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 28px;
+}
+.photobox h2 {
+    color: #ffffff;
+    font-size:  12px;
+    text-align: left;
+}
+
+.photobox p {
+    color: #ffffff;
+    text-align: left;
+    font-size: 15px;
+}
+.container-fluid {
+
+}
+
+.flex {
+    display: flex;
+}
+
+.button {
+    width: 185px;
+    height: 65px;
+    background-color: #1d809f;
+    border: none;
+    color: #ffffff;
+    align-self: center;
+    margin-top: 40px;
+    font-weight: bold;
+    border-radius: 4%;
+}
+
+.button2 {
+    width: 185px;
+    height: 65px;
+    background-color: #343a40;
+    border: none;
+    color: #ffffff;
+    margin-top: 40px;
+    border-radius: 4%;
+    font-weight: bold;
+}
+
+.button7-1 {
+    width: 145px;
+    height: 67px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4%;
+    color: #000000;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.button7-2 {
+    width: 160px;
+    height: 67px;
+    background-color: #343a40;
+    border: none;
+    border-radius: 4%;
+    color: #ffffff;
+    margin-top: 40px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.iconframe {
+    height: 110px;
+    width: 110px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.iconframefooter {
+    height: 65px;
+    width: 65px;
+    background-color: #1d809f;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.photobox {
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+
+#googleMap {
+    width: 100%;
+    height: 480px;
+}
+
+.copyright {
+    padding-top: 130px;
+    font-size: 11px;
+}
+
+.blue {
+    color: #1d809f;
+}
+
+.fas {
+    font-size: 40px;
+    position: relative;
+    top: 33px;
+    color: #1d809f;
+}
+
+.far {
+    font-size: 40px;
+    position: relative;
+    top: 33px;
+    color: #1d809f;
+}
+
+.far.fa-heart {
+    font-size: 12px;
+    position: relative;
+    top: 0px;
+    color: #bcd4d1;
+}
+
+.fab {
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    color: #ffffff
+}
+.fas.fa-cat {
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+}
+.fas.fa-bars {
+    background-color: rgba(96, 96, 96, 0.3);
+    font-size: 15px;
+    padding: 17px;
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.openmenu {
+    background-color: transparent;
+    padding: 17px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+}
+
+.col-md-6.bg1:nth-child(1) {
+    height: 370px;
+    background-image: url("images/portfolio-1.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.col-md-6.bg1:nth-child(2) {
+    height: 370px;
+    background-image: url("images/portfolio-2.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col-md-6.bg2:nth-child(1) {
+    height: 370px;
+    background-image: url("images/portfolio-3.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col-md-6.bg2:nth-child(2) {
+    height: 370px;
+    background-image: url("images/portfolio-4.jpg");
+    background-position: left; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav {
+    display: none;
+    background-color: #1d809f;
+    color: #ffffff;
+    position: absolute;
+    right: 0px;
+    top: 64px;
+    padding: 170px;
+}
+.nav a {
+    color: #ffffff;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    font-size: 20px;
+    position: relative;
+    right: 20px;
+    bottom: 120px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+}
