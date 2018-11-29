@@ -10,6 +10,7 @@
 	<link rel="mask-icon" href="<?php echo adresas(); ?>/images/favicon/safari-pinned-tab.svg" color="#db7300">
 	<meta name="msapplication-TileColor" content="#ff440e">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="<?php echo adresas(); ?>stiliai/apelsinas/default.css">
 </head>
 <body>
 
