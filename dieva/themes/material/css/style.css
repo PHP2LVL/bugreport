@@ -8090,3 +8090,11 @@ html.ie11 .bs-searchbox .form-control {
 .alert--cta {
   align-self: center;
 }
+
+.new-div {
+  position: absolute;
+  background: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
