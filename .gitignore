@@ -2,7 +2,7 @@
 .project
 priedai/conf.php
 sandeliukas/*
-# sandeliukas/!.htaccess
+sandeliukas/!.htaccess
 images/nuorodu/*
 images/nuorodu/!index.html
 images/avatars/*

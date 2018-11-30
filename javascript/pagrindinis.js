@@ -129,14 +129,28 @@ function checkedAll(frm1) {
 //     document.getElementsByClassName(".pavadinimas").innerHTML = coords;
 // }
 
-function offset(el) {
-    var rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+// function offset(el) {
+//     var rect = el.getBoundingClientRect(),
+//         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+//         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+// }
+//
+// // example use
+// var div = document.body; //or querySelector
+// var divOffset = offset(div);
+// console.log(divOffset.left, divOffset.top);
+
+function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    var selectbody = document.body;
+    document.addEventListener("click", showCoords)
+    console.log(coords);
 }
 
-// example use
-var div = document.getElementsByTagName("body")[0];
-var divOffset = offset(div);
-console.log(divOffset.left, divOffset.top);
+function selectBody() {
+    document.body
+}
+
