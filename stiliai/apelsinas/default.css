@@ -780,12 +780,3 @@ a.siust {
 /* -------------------------------- */
 /* END OF BUTTON */
 /* -------------------------------- */
-
-
-.new-div {
-    position: absolute;
-    background: red;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-}
