@@ -19,5 +19,5 @@ siuntiniai/media/!index.html
 install-
 install--
 install/node_modules
-.htaccess
+# .htaccess
 priedai/conf.php
