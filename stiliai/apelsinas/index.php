@@ -66,7 +66,7 @@
 		
 		<!-- REPORT BUG BUTTON -->
 		<div class="report">
-			<button class="myBtn" title="Report bug">Report BUG</button>
+			<button class="myBtn" onclick="showCoords(event);" title="Report bug">Report BUG</button>
 			<p id="coords"></p>
 		</div>
 		<!-- END OF REPORT BUG -->

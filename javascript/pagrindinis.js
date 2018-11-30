@@ -120,3 +120,37 @@ function checkedAll(frm1) {
         aa.elements[i].checked = checked;
     }
 }
+
+// function showCoords(event) {
+//     getElementsByTagName('body');
+//     var x = event.clientX;
+//     var y = event.clientY;
+//     var coords = "X coords: " + x + ", Y coords: " + y;
+//     document.getElementsByClassName(".pavadinimas").innerHTML = coords;
+// }
+
+// function offset(el) {
+//     var rect = el.getBoundingClientRect(),
+//         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+//         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+// }
+//
+// // example use
+// var div = document.body; //or querySelector
+// var divOffset = offset(div);
+// console.log(divOffset.left, divOffset.top);
+
+function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    var selectbody = document.body;
+    document.addEventListener("click", showCoords)
+    console.log(coords);
+}
+
+function selectBody() {
+    document.body
+}
+
