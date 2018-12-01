@@ -99,20 +99,20 @@ function serialize(form) {
 // function info(){
     
 // }
-// var form = document.querySelector('.report');
+var form = document.querySelector('.form-container .btn');
      
-// form.addEventListener('click', function(e){
-//     e.preventDefault();
-//     var data = serialize(form);
-//     console.log(data);
-//     postAjax('info.php', data, function(response){
-//         console.log(response);      
-//         var json = JSON.parse(response);
-//         console.log(json);
-//         var msg = json.message;
-//         alert(msg);
-//     });
-// });
+form.addEventListener('click', function(e){
+    e.preventDefault();
+    var data = serialize(form);
+    console.log(data);
+    postAjax('info.php', data, function(response){
+        console.log(response);      
+    //     var json = JSON.parse(response);
+    //     console.log(json);
+    //     var msg = json.message;
+    //     alert(msg);
+    });
+});
 
 function device() {
     var width  = screen.width;

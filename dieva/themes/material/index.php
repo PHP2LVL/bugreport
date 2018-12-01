@@ -113,13 +113,13 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 		<!-- END OF REPORT BUG -->
         <!--bug report form-->
         <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
+            <form action="" class="form-container">
 
                 <label for="bugdesc"><b>Bug description</b></label>
                 <textarea rows="15" cols="32" name="bugdesc" required></textarea>
 
-                <button type="submit" class="btn">Report</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <button type="submit" name="submitas" class="btn">Submit</button>
+                <button type="button" name="cancelis" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
 

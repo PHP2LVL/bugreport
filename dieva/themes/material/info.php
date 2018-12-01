@@ -92,3 +92,4 @@ $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
 
 echo json_encode('IP- ' . $ip . ' ' . $yourbrowser);
+exit;
