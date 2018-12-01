@@ -58,18 +58,6 @@ if(button) {
 // END OF BUTTON
 // ------------------------
 
-// ------------------------
-// SCREEN RESOLUTION FUNCTION
-// ------------------------
-
-function device() {
-    var width  = screen.width;
-    var height = screen.height;
-    var screenas = width+'x'+height;
-    console.log(screenas);
-}
-// ------------------------
-
 function postAjax(url, data, success) {
     var params = typeof data == 'string' ? data : Object.keys(data).map(
             function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
@@ -124,4 +112,11 @@ function serialize(form) {
 //         var msg = json.message;
 //         alert(msg);
 //     });
-// });    
+// });
+
+function device() {
+    var width  = screen.width;
+    var height = screen.height;
+    var screenas = width+'x'+height;
+    console.log(screenas);
+}
