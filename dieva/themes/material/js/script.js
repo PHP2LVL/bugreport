@@ -3,10 +3,18 @@
 // ------------------------
 
 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    location.reload();
+}
+
 var clicks = 0;
 
 function showCoords(event) {
-    
     event.preventDefault();
 
     clicks++;
@@ -27,9 +35,7 @@ function showCoords(event) {
     console.log(coords);
     openForm();
 
-    device();
-    // info();
-    console.log(coords);
+
 }
 
 function selectCords(e) {
