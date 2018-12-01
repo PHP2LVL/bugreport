@@ -116,7 +116,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
             <form action="/action_page.php" class="form-container">
 
                 <label for="bugdesc"><b>Bug description</b></label>
-                <input type="text"  name="bugdesc" required>
+                <textarea rows="15" cols="32" name="bugdesc" required></textarea>
 
                 <button type="submit" class="btn">Report</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
