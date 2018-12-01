@@ -116,6 +116,17 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 		</div>
 
 		<!-- END OF REPORT BUG -->
+        <!--bug report form-->
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+
+                <label for="bugdesc"><b>Bug description</b></label>
+                <input type="text"  name="bugdesc" required>
+
+                <button type="submit" class="btn">Report</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
 
         <!-- Footer -->
         <div class="legal">

@@ -2,6 +2,17 @@
 // REPORT BUG BUTTON SCRIPT
 // ------------------------
 
+<<<<<<< HEAD
+=======
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    location.reload();
+}
+>>>>>>> getcoordinates
 
 var clicks = 0;
 
@@ -22,14 +33,18 @@ function showCoords(event) {
 
     newDiv.style.left = x + 'px';
     newDiv.style.top = y + 'px';
-
     newDiv.classList.add('new-div');
-
     document.body.appendChild(newDiv);
+    console.log(coords);
+    openForm();
 
+<<<<<<< HEAD
     device();
     // info();
     console.log(coords);
+=======
+
+>>>>>>> getcoordinates
 }
 
 function selectCords(e) {
@@ -45,6 +60,9 @@ if(button) {
     // console.log(button);
     button.addEventListener('click', selectCords);
 }
+
+
+
 // ------------------------
 // END OF BUTTON
 // ------------------------
