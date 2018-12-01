@@ -1,9 +1,12 @@
 ﻿// ------------------------
 // REPORT BUG BUTTON SCRIPT
 // ------------------------
+
+
 var clicks = 0;
 
 function showCoords(event) {
+    
     event.preventDefault();
 
     clicks++;
@@ -24,7 +27,7 @@ function showCoords(event) {
 
     document.body.appendChild(newDiv);
 
-
+    device();
     console.log(coords);
 }
 
@@ -43,4 +46,16 @@ if(button) {
 }
 // ------------------------
 // END OF BUTTON
+// ------------------------
+
+// ------------------------
+// SCREEN RESOLUTION FUNCTION
+// ------------------------
+
+function device() {
+    var width  = screen.width;
+    var height = screen.height;
+    var screenas = width+'x'+height;
+    console.log(screenas);
+}
 // ------------------------
