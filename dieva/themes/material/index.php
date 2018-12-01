@@ -109,6 +109,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 			<button class="my-btn" title="Report bug">Report BUG</button>
 			<p id="coords"></p>
 		</div>
+
 		<!-- END OF REPORT BUG -->
         <!--bug report form-->
         <div class="form-popup" id="myForm">
