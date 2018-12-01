@@ -1,4 +1,5 @@
 <?php
+
 // ALL USER INFO AND ALL USER INFO FROM BUG REPORT FROM
 
 $ip = $_SERVER['REMOTE_ADDR']; // USERIO IP
@@ -90,4 +91,4 @@ function getBrowser(){
 $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
 
-echo $ip. ' ' . $yourbrowser;
+echo json_encode('IP- ' . $ip . ' ' . $yourbrowser);

@@ -109,6 +109,12 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 			<button class="my-btn" title="Report bug">Report BUG</button>
 			<p id="coords"></p>
 		</div>
+
+        		<div class="klase">
+			<button class="naujas" title="Report bug">TEST</button>
+			<p id="coords"></p>
+		</div>
+
 		<!-- END OF REPORT BUG -->
 
         <!-- Footer -->
