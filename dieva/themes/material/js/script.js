@@ -2,17 +2,6 @@
 // REPORT BUG BUTTON SCRIPT
 // ------------------------
 
-<<<<<<< HEAD
-=======
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    location.reload();
-}
->>>>>>> getcoordinates
 
 var clicks = 0;
 
@@ -38,13 +27,9 @@ function showCoords(event) {
     console.log(coords);
     openForm();
 
-<<<<<<< HEAD
     device();
     // info();
     console.log(coords);
-=======
-
->>>>>>> getcoordinates
 }
 
 function selectCords(e) {
@@ -120,17 +105,17 @@ function serialize(form) {
 // function info(){
     
 // }
-var form = document.querySelector('.klase');
+// var form = document.querySelector('.report');
      
-form.addEventListener('click', function(e){
-    e.preventDefault();
-    var data = serialize(form);
-    console.log(data);
-    postAjax('info.php', data, function(response){
-        console.log(response);      
-        var json = JSON.parse(response);
-        console.log(json);
-        var msg = json.message;
-        alert(msg);
-    });
-});    
+// form.addEventListener('click', function(e){
+//     e.preventDefault();
+//     var data = serialize(form);
+//     console.log(data);
+//     postAjax('info.php', data, function(response){
+//         console.log(response);      
+//         var json = JSON.parse(response);
+//         console.log(json);
+//         var msg = json.message;
+//         alert(msg);
+//     });
+// });    

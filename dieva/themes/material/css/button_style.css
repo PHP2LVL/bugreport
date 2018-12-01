@@ -21,18 +21,3 @@
 /* -------------------------------- */
 /* END OF BUTTON */
 /* -------------------------------- */
-
-.klase button {
-    position: fixed;
-    bottom: 60px;
-    right: 60px;
-    z-index: 3;
-    border: none;
-    outline: none;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-    padding: 5px;
-}

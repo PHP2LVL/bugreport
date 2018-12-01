@@ -110,11 +110,6 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 			<p id="coords"></p>
 		</div>
 
-        		<div class="klase">
-			<button class="naujas" title="Report bug">TEST</button>
-			<p id="coords"></p>
-		</div>
-
 		<!-- END OF REPORT BUG -->
         <!--bug report form-->
         <div class="form-popup" id="myForm">
