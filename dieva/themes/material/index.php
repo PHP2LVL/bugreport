@@ -119,6 +119,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 </label>
                 <textarea rows="15" cols="32" name="bugdesc" required></textarea>
 
+
                 <input type="submit" name="pateikti" value="pateikti" class="btn">
                 <button type="button" name="cancelis" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
