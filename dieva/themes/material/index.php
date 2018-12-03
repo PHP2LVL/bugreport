@@ -109,20 +109,40 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 			<button class="my-btn" title="Report bug">Report BUG</button>
 			<p id="coords"></p>
 		</div>
-
 		<!-- END OF REPORT BUG -->
+
         <!--bug report form-->
         <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-
-                <label for="bugdesc"><b>Bug description</b></label>
+            <form action="" method="POST" enctype="multipart/form-data" class="form-container">
+                <label for="bugdesc">
+                    <b>Bug description</b>
+                </label>
                 <textarea rows="15" cols="32" name="bugdesc" required></textarea>
 
-                <button type="submit" class="btn">Report</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <input type="submit" name="pateikti" value="pateikti" class="btn">
+                <button type="button" name="cancelis" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
+        <script type="text/javascript">
+            var forma = document.querySelector('.form-container .btn');
+            forma.addEventListener('click', function(e){
+                e.preventDefault();
+                var $this = $(this);
+                var serializedData = JSON.stringify($($this).nestable('serialize')),
+                data = {
+                    action: 'atsakymas',
+                    action_functions: 'modulis',
+                    formData: serializedData
+                };
 
+                $.post("<?php echo url( "?id,999;a,ajax;" ); ?>", data, function(response) {
+                    if(response) {
+                        console.log(response);
+                        // showNotification('success', response);
+                    }
+                });
+            });
+        </script>
         <!-- Footer -->
         <div class="legal">
             <!-- <div class="copyright">
