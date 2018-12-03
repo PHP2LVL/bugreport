@@ -2,6 +2,7 @@
 
 
 function atsakymas($data){
+    $aprasymas = $data['info'];
     $ip = $_SERVER['REMOTE_ADDR']; // USERIO IP
 
     function getBrowser(){ 
@@ -91,6 +92,6 @@ function atsakymas($data){
     $ua=getBrowser();
     $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
     
-    echo json_encode('IP- ' . $ip . ' ' . $yourbrowser);
+    echo json_encode('IP- ' . $ip . '<br>' . ' ' . $yourbrowser . '<br>' . 'Aprasymas: ' . $aprasymas);
     exit;
 }

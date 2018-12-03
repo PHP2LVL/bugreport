@@ -126,10 +126,12 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <script type="text/javascript">
             var forma = document.querySelector('.form-container .btn');
             forma.addEventListener('click', function(e){
+                var info = document.querySelector('.form-container textarea').value;
                 e.preventDefault();
                 var $this = $(this);
                 var serializedData = JSON.stringify($($this).nestable('serialize')),
                 data = {
+                    info: info,
                     action: 'atsakymas',
                     action_functions: 'modulis',
                     formData: serializedData
