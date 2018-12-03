@@ -2,62 +2,6 @@
 // REPORT BUG BUTTON SCRIPT
 // ------------------------
 
-
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    location.reload();
-}
-
-var clicks = 0;
-
-function showCoords(event) {
-    event.preventDefault();
-
-    clicks++;
-    // console.log(clicks);
-    if(event.target.classList.contains('my-btn') || clicks > 2) {
-        return;
-    }
-
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " + x + ", Y coords: " + y;
-    var newDiv = document.createElement('div');
-
-    newDiv.style.left = x + 'px';
-    newDiv.style.top = y + 'px';
-    newDiv.classList.add('new-div');
-    document.body.appendChild(newDiv);
-    console.log(coords);
-    openForm();
-
-
-}
-
-function selectCords(e) {
-    e.preventDefault();
-    // console.log('btn');
-
-    document.addEventListener("click", showCoords);
-}
-
-var button = document.querySelector('.report .my-btn');
-
-if(button) {
-    // console.log(button);
-    button.addEventListener('click', selectCords);
-}
-
-
-
-// ------------------------
-// END OF BUTTON
-// ------------------------
-
 function postAjax(url, data, success) {
     var params = typeof data == 'string' ? data : Object.keys(data).map(
             function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
@@ -95,24 +39,81 @@ function serialize(form) {
     }
     return s.join('&').replace(/%20/g, '+');
 }
-
 // function info(){
-    
-// }
-var form = document.querySelector('.form-container .btn');
+//     var forma = document.querySelector('.form-container');
      
-form.addEventListener('click', function(e){
+//     forma.addEventListener('submit', function(e){
+//         e.preventDefault();
+//         alert('labas');
+//         var data = serialize(forma);
+//         console.log(data);
+//         // postAjax('info.php', data, function(response){
+//         //     console.log(response);
+//             // var json = JSON.parse(response);
+//             // console.log(json);
+//         // });
+//     });
+// }
+
+
+
+
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    location.reload();
+}
+
+var clicks = 0;
+
+function showCoords(event) {
+    event.preventDefault();
+
+    clicks++;
+    // console.log(clicks);
+    if(event.target.classList.contains('my-btn') || clicks > 2) {
+        return;
+    }
+
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    var newDiv = document.createElement('div');
+
+    newDiv.style.left = x + 'px';
+    newDiv.style.top = y + 'px';
+    newDiv.classList.add('new-div');
+    document.body.appendChild(newDiv);
+    console.log(coords);
+    openForm();
+    device();
+    // info();
+
+}
+
+function selectCords(e) {
     e.preventDefault();
-    var data = serialize(form);
-    console.log(data);
-    postAjax('info.php', data, function(response){
-        console.log(response);      
-    //     var json = JSON.parse(response);
-    //     console.log(json);
-    //     var msg = json.message;
-    //     alert(msg);
-    });
-});
+    // console.log('btn');
+
+    document.addEventListener("click", showCoords);
+}
+
+var button = document.querySelector('.report .my-btn');
+
+if(button) {
+    // console.log(button);
+    button.addEventListener('click', selectCords);
+}
+
+
+
+// ------------------------
+// END OF BUTTON
+// ------------------------
 
 function device() {
     var width  = screen.width;
@@ -120,3 +121,29 @@ function device() {
     var screenas = width+'x'+height;
     console.log(screenas);
 }
+// ------------------------------
+
+
+
+// var forma = document.querySelector('.form-container .btn');
+     
+//     forma.addEventListener('click', function(e){
+//         e.preventDefault();
+
+//         var $this = $(this);
+// 		var serializedData = JSON.stringify($($this).nestable('serialize')),
+
+//         var data = {
+//             action: 'atsakymas',
+//             action_functions: 'modulis',
+//             formData: serializedData
+//         };
+
+//         console.log(data);
+//         postAjax('<?php echo url( "?id,999;a,ajax;" ); ?>', data, function(response){
+//             console.log(response);
+//             // var json = JSON.parse(response);
+//             // console.log(json);
+//         });
+//     });
+
