@@ -124,14 +124,25 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 <button type="button" name="cancelis" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
+        <!-- Footer -->
+        <div class="legal">
+            <!-- <div class="copyright">
+                &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+            </div> -->
+            <div class="version">
+                <b>Versija: </b> <?php echo versija(); ?>
+            </div>
+        </div>
         <script type="text/javascript">
             var forma = document.querySelector('.form-container .btn');
             forma.addEventListener('click', function(e){
+                var versija = <?php echo versija(); ?>;
                 var info = document.querySelector('.form-container textarea').value;
                 e.preventDefault();
                 var $this = $(this);
                 var serializedData = JSON.stringify($($this).nestable('serialize')),
                 data = {
+                    versija: versija,
                     info: info,
                     action: 'atsakymas',
                     action_functions: 'modulis',
@@ -146,15 +157,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 });
             });
         </script>
-        <!-- Footer -->
-        <div class="legal">
-            <!-- <div class="copyright">
-                &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
-            </div> -->
-            <div class="version">
-                <b>Versija: </b> <?php echo versija(); ?>
-            </div>
-        </div>
+
         <!-- #Footer -->
     </aside>
     <!-- #END# Left Sidebar -->

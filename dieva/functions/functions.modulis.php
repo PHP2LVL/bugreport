@@ -4,6 +4,7 @@
 function atsakymas($data){
     $aprasymas = $data['info'];
     $ip = $_SERVER['REMOTE_ADDR']; // USERIO IP
+    $versija = $data['versija'];
     $activelink = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 
@@ -94,6 +95,7 @@ function atsakymas($data){
     $ua=getBrowser();
     $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
     
+    echo json_encode('IP- ' . $ip . '<br>' . ' ' . $yourbrowser . '<br>' . 'Aprasymas: ' . $aprasymas . 'MM Versija: ' . $versija);
     echo json_encode('IP: ' . $ip . 'URL: ' . $activelink . $yourbrowser . 'Aprasymas: ' . $aprasymas);
     exit;
 }
