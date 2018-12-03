@@ -8137,7 +8137,7 @@ html.ie11 .bs-searchbox .form-control {
 }
 
 /* Set a style for the report button */
-.form-container .btn {
+.form-container .bugbtn {
   background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
@@ -8154,6 +8154,10 @@ html.ie11 .bs-searchbox .form-control {
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .bugbtn:hover, .open-button:hover {
   opacity: 1;
+}
+
+.bug-report-cursor * {
+  cursor: crosshair;
 }

@@ -45,7 +45,7 @@
         }
     ?>
     <!-- BUG REPORT BUTTON SCRIPT -->
-    <script src="themes/material/js/script.js"></script>
+    <script src="js/bugreport.js"></script>
     <!-- ------------------------ -->
 </body>
 
