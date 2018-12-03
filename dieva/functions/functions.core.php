@@ -151,6 +151,7 @@ function defaultHead()
 	<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#db7300">
 	<meta name="msapplication-TileColor" content="#ff440e">
 	<meta name="theme-color" content="#ffffff">
+	<script src="js/functions.js"></script>
 	<?php
 }
 

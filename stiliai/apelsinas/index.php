@@ -10,6 +10,7 @@
 	<link rel="mask-icon" href="<?php echo adresas(); ?>/images/favicon/safari-pinned-tab.svg" color="#db7300">
 	<meta name="msapplication-TileColor" content="#ff440e">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="<?php echo adresas(); ?>stiliai/apelsinas/default.css">
 </head>
 <body>
 
@@ -62,6 +63,15 @@
 		</div>
 		<?php } ?>
 		<div class="sonas"></div>
+		
+		<!-- REPORT BUG BUTTON -->
+		<div class="report">
+			<button class="my-btn" title="Report bug">Report BUG</button>
+			<p id="coords"></p>
+		</div>
+		<!-- END OF REPORT BUG -->
+
+
 		<div id="kojos">
 			<div class="tekstas"><?php copyright( $conf['Copyright'] );?></div>
 			<a href="http://mightmedia.lt" target="_blank" title="Mightmedia">
@@ -75,5 +85,7 @@
 		<div class="taisom"></div>
 	</div>
 </div>
+<script src="<?php echo adresas(); ?>stiliai/apelsinas/script.js"></script>
+
 </body>
 </html>

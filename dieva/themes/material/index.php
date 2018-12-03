@@ -103,6 +103,25 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
             </ul>
         </div>
         <!-- #Menu -->
+
+		<!-- REPORT BUG BUTTON -->
+		<div class="report">
+			<button class="my-btn" title="Report bug">Report BUG</button>
+			<p id="coords"></p>
+		</div>
+		<!-- END OF REPORT BUG -->
+
+        <!--bug report form-->
+        <div class="form-popup">
+            <form action="" method="POST" class="form-container bug-report-form">
+                <label for="bugdesc">
+                    <b>Bug description</b>
+                </label>
+                <textarea rows="15" cols="32" name="bugdesc" required></textarea>
+                <button type="submit" name="submit-report" class="bugbtn">Submit</button>
+                <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
         <!-- Footer -->
         <div class="legal">
             <!-- <div class="copyright">
@@ -112,6 +131,14 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 <b>Versija: </b> <?php echo versija(); ?>
             </div>
         </div>
+        <script type="text/javascript">
+           
+            var bugReportUserEmail         = '<?php echo $user['email']; ?>'; 
+            var currentVersion             =  <?php echo versija(); ?>;
+            var ajaxUrl                    = '<?php echo url( "?id,999;a,ajax;" ); ?>';
+            
+        </script>
+
         <!-- #Footer -->
     </aside>
     <!-- #END# Left Sidebar -->
