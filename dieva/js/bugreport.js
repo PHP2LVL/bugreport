@@ -32,9 +32,16 @@ function showCoords(event) {
     newDiv.style.top = (y - 25) + 'px';
     newDiv.classList.add('new-div');
     document.body.appendChild(newDiv);
-    console.log(coords);
+    // console.log(coords);
+    var xInput = document.querySelector('[name="bug-x"]');
+    xInput.value = x;
+    var yInput = document.querySelector('[name="bug-y"]');
+    yInput.value = y;
     openForm();
-    screenresolution();
+    console.log(xInput);
+
+
+
 }
 // end of bug placement dot.
 
@@ -57,10 +64,10 @@ function screenresolution() {
     var width  = screen.width;
     var height = screen.height;
     var screenresolution = width+'x'+height;
-    console.log(screenresolution);
+    return screenresolution;
 }
 
-//aJax with functions.bugreportinfo.php, see "action".
+//aJax with functions.bugreport.php, see "action".
 var bugReportForm = document.querySelector('.bug-report-form');
 if(bugReportForm) {
     bugReportForm.addEventListener('submit', function(e){
@@ -69,12 +76,14 @@ if(bugReportForm) {
         var serializedData = serializeAjax(bugReportForm);
     
         var bugReportData = {
+            screenRes: screenresolution(),
             email: bugReportUserEmail,
             currentVersion: currentVersion,
             bugReportInfo: bugReportInfo,
-            action: 'getBugInfo',
-            action_functions: 'bugreportinfo',
-            formData: serializedData
+            action: 'getBugInfoAjax',
+            action_functions: 'bugreport',
+            formData: serializedData,
+            themeVersion: themeVersion
         };
     
         postAjax(ajaxUrl, bugReportData, function(response) {

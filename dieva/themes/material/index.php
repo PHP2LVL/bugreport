@@ -7,6 +7,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
     <aside id="leftsidebar" class="sidebar">
         <!-- User Info -->
         <div class="user-info">
+
             <div class="image">
                 <?php echo avatar($user['email'], 48); ?>
             </div>
@@ -120,6 +121,8 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 <textarea rows="15" cols="32" name="bugdesc" required></textarea>
                 <button type="submit" name="submit-report" class="bugbtn">Submit</button>
                 <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
+                <input type="hidden" class="bugPos" name="bug-x" value="0">
+                <input type="hidden" class="bugPos" name="bug-y" value="0">
             </form>
         </div>
         <!-- Footer -->
@@ -132,10 +135,11 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
             </div>
         </div>
         <script type="text/javascript">
-           
+
             var bugReportUserEmail         = '<?php echo $user['email']; ?>'; 
             var currentVersion             =  <?php echo versija(); ?>;
             var ajaxUrl                    = '<?php echo url( "?id,999;a,ajax;" ); ?>';
+            var themeVersion               = '<?php echo $conf['Stilius'];?>';
             
         </script>
 
