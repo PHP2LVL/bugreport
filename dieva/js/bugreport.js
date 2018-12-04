@@ -38,10 +38,7 @@ function showCoords(event) {
     var yInput = document.querySelector('[name="bug-y"]');
     yInput.value = y;
     openForm();
-    console.log(xInput);
-
-
-
+    // console.log(xInput);
 }
 // end of bug placement dot.
 
@@ -72,10 +69,14 @@ var bugReportForm = document.querySelector('.bug-report-form');
 if(bugReportForm) {
     bugReportForm.addEventListener('submit', function(e){
         e.preventDefault();
+        var cordX = document.querySelector('[name="bug-x"]').value;
+        var cordY = document.querySelector('[name="bug-y"]').value;
         var bugReportInfo = document.querySelector('.form-container textarea').value;    
         var serializedData = serializeAjax(bugReportForm);
     
         var bugReportData = {
+            cordX: cordX,
+            cordY, cordY,
             screenRes: screenresolution(),
             email: bugReportUserEmail,
             currentVersion: currentVersion,
