@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * from internet to get browser DATA
  *
@@ -98,12 +97,14 @@ function getBrowser(){
 function getBugInfoAjax($data)
 {
     $bugDescription = $data['bugReportInfo'];
-    $ip = $_SERVER['REMOTE_ADDR']; // USERIO IP
-    $mmVersion = $data['currentVersion'];
-    $activelink = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    $email = $data['email'];
-    $themeVersion = $data['themeVersion'];
-    $screenRes = $data['screenRes'];
+    $ip             = $_SERVER['REMOTE_ADDR']; // USERIO IP
+    $mmVersion      = $data['currentVersion'];
+    $activelink     = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $email          = $data['email'];
+    $themeVersion   = $data['themeVersion'];
+    $screenRes      = $data['screenRes'];
+    $cordX          = $data['cordX'];
+    $cordY          = $data['cordY'];
     // now try it
     $ua=getBrowser();
     $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
@@ -117,7 +118,9 @@ function getBugInfoAjax($data)
         'browser'       => $yourbrowser,
         'description'   => $bugDescription,
         'version'       => $mmVersion,
-        'email'         => $email
+        'email'         => $email,
+        'x-coordinates' => $cordX,
+        'y-coordinates' => $cordY
     ];
 
 }
