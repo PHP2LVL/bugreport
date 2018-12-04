@@ -1,6 +1,7 @@
 
 function openForm() {
     document.querySelector(".form-popup").style.display = "block";
+    document.body.classList.remove('bug-report-cursor');
 }
 
 
@@ -17,7 +18,7 @@ function showCoords(event) {
     
     clicks++;
 
-    if(event.target.classList.contains('my-btn') || clicks > 2) {
+    if(event.target.classList.contains('my-btn') || event.target.parentNode.classList.contains('my-btn') || clicks > 2) {
         return;
     }
 
@@ -37,8 +38,8 @@ function showCoords(event) {
     xInput.value = x;
     var yInput = document.querySelector('[name="bug-y"]');
     yInput.value = y;
+    //open bug report form
     openForm();
-    // console.log(xInput);
 }
 // end of bug placement dot.
 
@@ -47,7 +48,6 @@ function selectCords(e) {
     e.preventDefault();
     document.addEventListener("click", showCoords);
     document.body.classList.add('bug-report-cursor');
-    
 }
 
 

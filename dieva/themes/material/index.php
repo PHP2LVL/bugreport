@@ -106,10 +106,18 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <!-- #Menu -->
 
 		<!-- REPORT BUG BUTTON -->
-		<div class="report">
+		<!-- <div class="report">
 			<button class="my-btn" title="Report bug">Report BUG</button>
 			<p id="coords"></p>
-		</div>
+        </div> -->
+        
+        <div class="report">
+        <button type="button" class="my-btn btn bg-pink waves-effect" title="Report bug">
+            <i class="material-icons">report_problem</i>
+            <span>REPORT BUG</span>
+        </button>
+        </div>
+
 		<!-- END OF REPORT BUG -->
 
         <!--bug report form-->
