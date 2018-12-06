@@ -93,20 +93,18 @@ if(bugReportForm) {
             email: bugReportUserEmail,
             currentVersion: currentVersion,
             bugReportInfo: bugReportInfo,
-            action: 'getBugInfoAjax',
+            action: 'getBugReportAjax',
             action_functions: 'bugreport',
             formData: serializedData,
             themeVersion: themeVersion
         };
     
         postAjax(ajaxUrl, bugReportData, function(response) {
-            // console.log(response);;
-            if(response.includes('Delivered') ) {
-                confirm("Delivered");
-                document.location.reload();
-                } else {
-                confirm(response);
-                }
+            if(response != null) {
+                showNotification('success', 'All good');
+            } else {
+                showNotification('error', 'Error');
+            }
         });
     });
 }
