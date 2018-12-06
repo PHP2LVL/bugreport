@@ -104,9 +104,9 @@ if(bugReportForm) {
             if(response.includes('Delivered') ) {
                 confirm("Delivered");
                 document.location.reload();
-                } else {
-                confirm(response);
-                }
+            } else {
+            confirm(response);
+            }
         });
     });
 }
