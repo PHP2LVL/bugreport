@@ -114,14 +114,6 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         </div>
 		<!-- #bug report button -->
 
-		<!-- REPORT BUG BUTTON -->
-		<div class="report">
-			<button class="my-btn" title="Report bug">Report BUG</button>
-			<p id="coords"></p>
-		</div>
-		<!-- END OF REPORT BUG -->
-        <!--bug report form-->
-
         <!-- Footer -->
         <div class="legal">
             <!-- <div class="copyright">
@@ -151,6 +143,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
     </div>
 </section>
 
+        <!--bug report form-->
 <div class="form-popup">
     <form action="" method="POST" class="form-container bug-report-form">
         <label for="bugdesc">
@@ -163,5 +156,5 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <input type="hidden" class="bugPos" name="bug-y" value="0">
     </form>
 </div>
-
+        <!--#bug report form-->
 <?php include 'footer.php'; ?>
