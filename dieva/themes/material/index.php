@@ -7,6 +7,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
     <aside id="leftsidebar" class="sidebar">
         <!-- User Info -->
         <div class="user-info">
+
             <div class="image">
                 <?php echo avatar($user['email'], 48); ?>
             </div>
@@ -103,6 +104,29 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
             </ul>
         </div>
         <!-- #Menu -->
+        
+        <!-- bug report button -->
+        <div class="report">
+        <button type="button" class="my-btn btn bg-pink waves-effect" title="Report bug">
+            <i class="material-icons">report_problem</i>
+            <span>REPORT BUG</span>
+        </button>
+        </div>
+		<!-- #bug report button -->
+
+        <!--bug report form-->
+        <div class="form-popup">
+            <form action="" method="POST" class="form-container bug-report-form">
+                <label for="bugdesc">
+                    <b>Bug description</b>
+                </label>
+                <textarea rows="15" cols="32" name="bugdesc" required></textarea>
+                <button type="submit" name="submit-report" class="bugbtn">Submit</button>
+                <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
+                <input type="hidden" class="bugPos" name="bug-x" value="0">
+                <input type="hidden" class="bugPos" name="bug-y" value="0">
+            </form>
+        </div>
         <!-- Footer -->
         <div class="legal">
             <!-- <div class="copyright">
@@ -112,6 +136,15 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
                 <b>Versija: </b> <?php echo versija(); ?>
             </div>
         </div>
+        <script type="text/javascript">
+
+            var bugReportUserEmail         = '<?php echo $user['email']; ?>'; 
+            var currentVersion             =  <?php echo versija(); ?>;
+            var ajaxUrl                    = '<?php echo url( "?id,999;a,ajax;" ); ?>';
+            var themeVersion               = '<?php echo $conf['Stilius'];?>';
+            
+        </script>
+
         <!-- #Footer -->
     </aside>
     <!-- #END# Left Sidebar -->

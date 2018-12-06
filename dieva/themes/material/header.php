@@ -57,6 +57,7 @@
     <script src="themes/material/plugins/bootstrap-notify/bootstrap-notify.js"></script>
     <!-- Jquery Nestable -->
     <script src="themes/material/plugins/nestable/jquery.nestable.js"></script>
+    
 </head>
 
 <body class="theme-deep-orange">
