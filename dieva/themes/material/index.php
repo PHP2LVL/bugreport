@@ -111,20 +111,8 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
 			<p id="coords"></p>
 		</div>
 		<!-- END OF REPORT BUG -->
-
         <!--bug report form-->
-        <div class="form-popup">
-            <form action="" method="POST" class="form-container bug-report-form">
-                <label for="bugdesc">
-                    <b>Bug description</b>
-                </label>
-                <textarea rows="15" cols="32" name="bugdesc" required></textarea>
-                <button type="submit" name="submit-report" class="bugbtn">Submit</button>
-                <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
-                <input type="hidden" class="bugPos" name="bug-x" value="0">
-                <input type="hidden" class="bugPos" name="bug-y" value="0">
-            </form>
-        </div>
+
         <!-- Footer -->
         <div class="legal">
             <!-- <div class="copyright">
@@ -153,5 +141,18 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <?php adminPages(); ?>
     </div>
 </section>
+
+<div class="form-popup">
+    <form action="" method="POST" class="form-container bug-report-form">
+        <label for="bugdesc">
+            <b>Bug description</b>
+        </label>
+        <textarea rows="15" cols="32" name="bugdesc" required></textarea>
+        <button type="submit" name="submit-report" class="bugbtn">Submit</button>
+        <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
+        <input type="hidden" class="bugPos" name="bug-x" value="0">
+        <input type="hidden" class="bugPos" name="bug-y" value="0">
+    </form>
+</div>
 
 <?php include 'footer.php'; ?>

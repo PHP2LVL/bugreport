@@ -9,43 +9,55 @@ function closeForm() {
     location.reload();
 }
 
+// var subug = document.querySelector('.form-popup').addEventListener('submit');
+// subug.reload();
 
 // Makes bug placement dot, opens bug form, sets resolution
 var clicks = 0;
 
 function showCoords(event) {
-    
+
+
     clicks++;
 
-    if(event.target.classList.contains('my-btn') || clicks > 2) {
+    if(event.target.classList.contains('my-btn') || event.target.parentNode.classList.contains('my-btn') || clicks > 2) {
         return;
     }
 
+    event.stopPropagation();
     event.preventDefault();
+
     
     var x = event.clientX;
     var y = event.clientY;
     var coords = "X coords: " + x + ", Y coords: " + y;
     var newDiv = document.createElement('div');
+    var ibug = document.createElement('i');
 
     newDiv.style.left = (x - 25) + 'px';
     newDiv.style.top = (y - 25) + 'px';
     newDiv.classList.add('new-div');
+    ibug.classList.add('material-icons');
+    ibug.classList.add('add');
+    newDiv.className = 'btn bg-red btn-circle-lg new-div';
+    ibug.innerHTML = 'report_problem';
     document.body.appendChild(newDiv);
+    newDiv.appendChild(ibug);
+
+
     // console.log(coords);
     var xInput = document.querySelector('[name="bug-x"]');
     xInput.value = x;
     var yInput = document.querySelector('[name="bug-y"]');
     yInput.value = y;
     openForm();
-    // console.log(xInput);
 }
 // end of bug placement dot.
 
 
 function selectCords(e) {
     e.preventDefault();
-    document.addEventListener("click", showCoords);
+    document.addEventListener("click", showCoords, true);
     document.body.classList.add('bug-report-cursor');
     
 }
@@ -88,10 +100,13 @@ if(bugReportForm) {
         };
     
         postAjax(ajaxUrl, bugReportData, function(response) {
-            if(response) {
-                console.log(response);
-                // showNotification('success', response); // YOUR RESPONSE INFO   (issiusta sekmingai.....)
-            }
+            // console.log(response);;
+            if(response.includes('Delivered') ) {
+                confirm("Delivered");
+                document.location.reload();
+                } else {
+                confirm(response);
+                }
         });
     });
 }
