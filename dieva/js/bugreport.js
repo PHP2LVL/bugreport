@@ -9,6 +9,8 @@ function closeForm() {
     location.reload();
 }
 
+// var subug = document.querySelector('.form-popup').addEventListener('submit');
+// subug.reload();
 
 // Makes bug placement dot, opens bug form, sets resolution
 var clicks = 0;
@@ -98,10 +100,13 @@ if(bugReportForm) {
         };
     
         postAjax(ajaxUrl, bugReportData, function(response) {
-            if(response) {
-                console.log(response);
-                // showNotification('success', response); // YOUR RESPONSE INFO   (issiusta sekmingai.....)
-            }
+            // console.log(response);;
+            if(response.includes('Delivered') ) {
+                confirm("Delivered");
+                document.location.reload();
+                } else {
+                confirm(response);
+                }
         });
     });
 }
