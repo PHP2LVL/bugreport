@@ -99,28 +99,51 @@ function getBugInfoAjax($data)
     $bugDescription = $data['bugReportInfo'];
     $ip             = $_SERVER['REMOTE_ADDR']; // USERIO IP
     $mmVersion      = $data['currentVersion'];
-    $activelink     = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $activelink     = $_SERVER['SERVER_NAME']. $_SERVER['SCRIPT_NAME'];
     $email          = $data['email'];
     $themeVersion   = $data['themeVersion'];
     $screenRes      = $data['screenRes'];
     $cordX          = $data['cordX'];
     $cordY          = $data['cordY'];
+    
     // now try it
     $ua=getBrowser();
     $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
 
+    // return [
+    //     'ip'            => $ip,
+    //     'url'           => $activelink,
+    //     'screen'        => $screenRes,
+    //     'theme'         => $themeVersion,
+    //     'browser'       => $yourbrowser,
+    //     'description'   => $bugDescription,
+    //     'version'       => $mmVersion,
+    //     'email'         => $email,
+    //     'x-coordinates' => $cordX,
+    //     'y-coordinates' => $cordY
+    // ];
 
-    return [
-        'ip'            => $ip,
-        'url'           => $activelink,
-        'screen'        => $screenRes,
-        'theme'         => $themeVersion,
-        'browser'       => $yourbrowser,
-        'description'   => $bugDescription,
-        'version'       => $mmVersion,
-        'email'         => $email,
-        'x-coordinates' => $cordX,
-        'y-coordinates' => $cordY
-    ];
+    $bugInfo = '*IP:* ' . $ip . '\n*Url:* ' . $activelink . '\n*Screen:* ' . $screenRes . '\n*Theme:* ' . $themeVersion . '\n*Browser:* ' . $yourbrowser . '\n*Version:* ' . $mmVersion . '\n*Email:* ' . $email . '\n*X-coordinates:* ' . $cordX . '\n*Y-coordinates:* ' . $cordY . '\n*Description:* ' . $bugDescription;
+    $data = '{
+        "project":{"id":"0-0"},
+        "summary":"Testing issue from PHP ' . date('Y-m-d H:i:s') . '",
+        "description":"'.$bugInfo.'"
+    }';
+    if(!empty($email) && !empty($bugDescription)){
+        sendReport($data);
+    }
+}
+// MIGHTMEDIJOS FUNKCIJA ADRESAS PAZIURETI
+function sendReport($data){
+    $authorization = "Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB";
+    $ch = curl_init('https://mightmedia.myjetbrains.com/youtrack/api/issues');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+
+    var_dump($response);
 }
