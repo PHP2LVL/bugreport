@@ -44,6 +44,9 @@
             notifyMsg($_SESSION[SLAPTAS]['redirect']);
         }
     ?>
+    <!-- BUG REPORT BUTTON SCRIPT -->
+    <script src="js/bugreport.js"></script>
+    <!-- ------------------------ -->
 </body>
 
 </html>
