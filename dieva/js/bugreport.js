@@ -50,7 +50,6 @@ function showCoords(event) {
     xInput.value = x;
     var yInput = document.querySelector('[name="bug-y"]');
     yInput.value = y;
-    //open bug report form
     openForm();
 }
 // end of bug placement dot.
@@ -60,6 +59,7 @@ function selectCords(e) {
     e.preventDefault();
     document.addEventListener("click", showCoords, true);
     document.body.classList.add('bug-report-cursor');
+    
 }
 
 
@@ -104,9 +104,9 @@ if(bugReportForm) {
             if(response.includes('Delivered') ) {
                 confirm("Delivered");
                 document.location.reload();
-            } else {
-            confirm(response);
-            }
+                } else {
+                confirm(response);
+                }
         });
     });
 }
