@@ -141,7 +141,14 @@ function sendReport($data){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-    $response = curl_exec($ch);
+    curl_exec($ch);
+
+    $resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($resultStatus == 200) {
+        $response = 'Delivered';
+    } else {
+        die('Request sent failed: HTTP error code: ' . $resultStatus);
+    }
 
     curl_close($ch);
 
