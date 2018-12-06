@@ -96,25 +96,25 @@ function rating_form( $page, $id, $allow = TRUE ) {
 		if ( $allow == FALSE || !$rating->status ) {
 			$status = '';
 		}
-		if ( !isset( $_GET['update'] ) ) {
-			$return .= '<div class="rating_wrapper">';
-		}
-
-		$return .= '<div class="sp_rating" id="sp_rating_' . $id . '">
-      <div class="rating"></div>
-		  <div class="base">
-			  <div class="status">
-				  <div class="score" id="score_' . $id . '">
-				  ' . $status . '
-				  <div class="average" title="' . $rating->votes . ' ' . $lang['poll']['votes'] . '" style="width:' . $rating->average . '%">' . $rating->average . '</div>
-			  </div>
-		  </div>
-	  </div>
-
-    </div><script type="text/javascript">init_rating(\'' . $id . '\')</script>';
-		if ( !isset( $_GET['update'] ) ) {
-			$return .= '</div>';
-		}
+//		if ( !isset( $_GET['update'] ) ) {
+//			$return .= '<div class="rating_wrapper">';
+//		}
+//
+//		$return .= '<div class="sp_rating" id="sp_rating_' . $id . '">
+//      <div class="rating"></div>
+//		  <div class="base">
+//			  <div class="status">
+//				  <div class="score" id="score_' . $id . '">
+//				  ' . $status . '
+//				  <div class="average" title="' . $rating->votes . ' ' . $lang['poll']['votes'] . '" style="width:' . $rating->average . '%">' . $rating->average . '</div>
+//			  </div>
+//		  </div>
+//	  </div>
+//
+//    </div><script type="text/javascript">init_rating(\'' . $id . '\')</script>';
+//		if ( !isset( $_GET['update'] ) ) {
+//			$return .= '</div>';
+//		}
 	} else {
 		$return = '';
 	}
