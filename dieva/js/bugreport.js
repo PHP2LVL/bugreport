@@ -1,7 +1,6 @@
 
 function openForm() {
     document.querySelector(".form-popup").style.display = "block";
-    document.body.classList.remove('bug-report-cursor');
 }
 
 
