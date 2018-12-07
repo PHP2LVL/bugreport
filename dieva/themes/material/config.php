@@ -84,6 +84,7 @@ $icons = [
         'comments'      => 'comment', 
         'bans'          => 'do_not_disturb_on',
         'news'          => 'fiber_new',
-        'default'       => 'extension'
+        'default'       => 'extension',
+        'bugs'          => 'bug_report'
     ]
 ];
