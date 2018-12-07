@@ -6,13 +6,14 @@ if ( !defined( "LEVEL" ) || LEVEL > 1 || !defined( "OK" ) ) {
 if(! empty($_POST) && ! empty($_POST['action'])) {
     if(! empty($_POST['action_functions'])){
         $funcFile = 'functions/functions.' . input($_POST['action_functions']) . '.php';
+       
         if(is_file($funcFile)) {
             unset($_POST['action_functions']);
             
             include $funcFile;
         }
     }
-
+    
     if(function_exists($_POST['action'])) {
         $data = $_POST;
         unset($data['action']);
@@ -21,6 +22,7 @@ if(! empty($_POST) && ! empty($_POST['action'])) {
             echo $func;
         } else {
             echo json_encode($func, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+            var_dump($_POST); exit;
         }
         
     } else {
