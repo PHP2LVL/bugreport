@@ -8170,3 +8170,10 @@ html.ie11 .bs-searchbox .form-control {
   z-index: 80;
   cursor: crosshair;
 }
+
+.report button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 3;
+}
