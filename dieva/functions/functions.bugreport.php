@@ -1,5 +1,4 @@
 <?php
-
 /**
  * from internet to get browser DATA
  *
@@ -94,7 +93,7 @@ function getBrowser(){
  * @param $data
  * @return array
  */
-function getBugInfoAjax($data)
+function getBugReportAjax($data)
 {
     $bugDescription = $data['bugReportInfo'];
     $ip             = $_SERVER['REMOTE_ADDR']; // USERIO IP
@@ -107,7 +106,7 @@ function getBugInfoAjax($data)
     $cordY          = $data['cordY'];
     
     // now try it
-    $ua=getBrowser();
+    $ua = getBrowser();
     $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'];
 
     // return [
@@ -126,32 +125,51 @@ function getBugInfoAjax($data)
     $bugInfo = '*IP:* ' . $ip . '\n*Url:* ' . $activelink . '\n*Screen:* ' . $screenRes . '\n*Theme:* ' . $themeVersion . '\n*Browser:* ' . $yourbrowser . '\n*Version:* ' . $mmVersion . '\n*Email:* ' . $email . '\n*X-coordinates:* ' . $cordX . '\n*Y-coordinates:* ' . $cordY . '\n*Description:* ' . $bugDescription;
     $data = '{
         "project":{"id":"0-0"},
-        "summary":"Testing issue from PHP ' . date('Y-m-d H:i:s') . '",
+        "summary":"' . date('Y-m-d H:i:s') . '",
         "description":"'.$bugInfo.'"
     }';
-    if(!empty($email) && !empty($bugDescription)){
-        sendReport($data);
+
+    if(! empty($email) && ! empty($bugDescription)){
+        return sendReport($data);
     }
+
+    return null;
 }
 // MIGHTMEDIJOS FUNKCIJA ADRESAS PAZIURETI
 function sendReport($data){
-    $authorization = "Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB";
-    $ch = curl_init('https://mightmedia.myjetbrains.com/youtrack/api/issues');
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    $headers = [
+        'Content-Type: application/json', 
+        'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
+    ];
+    
+    $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues';
 
-    curl_exec($ch);
+    // open connection
+    $ch = curl_init();
 
+    $curlConfig = [
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_URL             => $url,
+        CURLOPT_POST            => true,
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_POSTFIELDS      => $data,
+        // not secure stuff
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYPEER => 0
+    ];
+
+    curl_setopt_array($ch, $curlConfig);
+
+    $response = curl_exec($ch);
     $resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    if ($resultStatus == 200) {
-        $response = 'Delivered';
-    } else {
-        die('Request sent failed: HTTP error code: ' . $resultStatus);
-    }
 
+    if ($resultStatus != 200) {
+        return curl_error($ch);
+    }
+    
+    //close connection
     curl_close($ch);
 
-    var_dump($response);
+    return $response;
 }
 
