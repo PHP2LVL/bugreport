@@ -104,6 +104,15 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
             </ul>
         </div>
         <!-- #Menu -->
+        
+        <!-- bug report button -->
+        <div class="report">
+            <button type="button" class="my-btn btn bg-pink waves-effect" title="Report bug">
+                <i class="material-icons">report_problem</i>
+                <span>REPORT BUG</span>
+            </button>
+        </div>
+		<!-- #bug report button -->
 
 		<!-- REPORT BUG BUTTON -->
 		<div class="report">
