@@ -135,7 +135,7 @@ function getBugReportAjax($data)
 
     return null;
 }
-// MIGHTMEDIJOS FUNKCIJA ADRESAS PAZIURETI
+
 function sendReport($data){
     $headers = [
         'Content-Type: application/json', 
