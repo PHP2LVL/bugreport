@@ -26,16 +26,21 @@ function showCoords(event) {
 
     event.stopPropagation();
     event.preventDefault();
-
     
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " + x + ", Y coords: " + y;
+    var x = event.pageX || event.offsetX;
+    var y = event.pageY || event.offsetY;
+    //todo: remove this line after debug:
+
+    // var coords = "X coords: " + x + ", Y coords: " + y;
     var newDiv = document.createElement('div');
     var ibug = document.createElement('i');
 
+    openForm();
+
     newDiv.style.left = (x - 25) + 'px';
     newDiv.style.top = (y - 25) + 'px';
+    // newDiv.style.transform = 'translateX(' + (x - 25) + 'px) translateY(' + (y - 25) + 'px)';
+
     newDiv.classList.add('new-div');
     ibug.classList.add('material-icons');
     ibug.classList.add('add');
@@ -50,16 +55,16 @@ function showCoords(event) {
     xInput.value = x;
     var yInput = document.querySelector('[name="bug-y"]');
     yInput.value = y;
-    openForm();
+
 }
 // end of bug placement dot.
 
 
 function selectCords(e) {
     e.preventDefault();
-    document.addEventListener("click", showCoords, true);
+
     document.body.classList.add('bug-report-cursor');
-    
+    document.addEventListener("click", showCoords, true);
 }
 
 
@@ -73,6 +78,7 @@ function screenresolution() {
     var width  = screen.width;
     var height = screen.height;
     var screenresolution = width+'x'+height;
+
     return screenresolution;
 }
 

@@ -125,7 +125,7 @@ function getBugReportAjax($data)
     $bugInfo = '*IP:* ' . $ip . '\n*Url:* ' . $activelink . '\n*Screen:* ' . $screenRes . '\n*Theme:* ' . $themeVersion . '\n*Browser:* ' . $yourbrowser . '\n*Version:* ' . $mmVersion . '\n*Email:* ' . $email . '\n*X-coordinates:* ' . $cordX . '\n*Y-coordinates:* ' . $cordY . '\n*Description:* ' . $bugDescription;
     $data = '{
         "project":{"id":"0-0"},
-        "summary":"Testing issue from PHP ' . date('Y-m-d H:i:s') . '",
+        "summary":"' . date('Y-m-d H:i:s') . '",
         "description":"'.$bugInfo.'"
     }';
 
@@ -135,7 +135,7 @@ function getBugReportAjax($data)
 
     return null;
 }
-// MIGHTMEDIJOS FUNKCIJA ADRESAS PAZIURETI
+
 function sendReport($data){
     $headers = [
         'Content-Type: application/json', 

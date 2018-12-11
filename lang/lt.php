@@ -316,6 +316,7 @@ $lang['admin']['cancel'] = 'Atšaukti';
 $lang['admin']['pm'] = 'Žinutės';
 $lang['admin']['dashboard'] = 'Darbalaukis';
 $lang['admin']['logs'] = 'Žurnalas';
+$lang['admin']['allBugsReported'] = 'Reported Bugs';
 $lang['admin']['meniu'] = 'Puslapiai';
 $lang['admin']['admin_chat'] = 'Užrašinė';
 $lang['admin']['uncache'] = 'Valyti „sandėliuką“';
