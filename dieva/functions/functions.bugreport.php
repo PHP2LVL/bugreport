@@ -1,4 +1,5 @@
 <?php
+
 /**
  * from internet to get browser DATA
  *
@@ -129,7 +130,12 @@ function getBugReportAjax($data)
         "description":"'.$bugInfo.'"
     }';
 
+
     if(! empty($email) && ! empty($bugDescription)){
+        include_once '/var/www/html/mmbug/priedai/conf.php';
+
+        mysql_query1( "INSERT INTO `" . LENTELES_PRIESAGA . "bugs` (`description`) VALUES (" . $bugDescription . ")" );
+
         return sendReport($data);
     }
 
