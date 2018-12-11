@@ -478,7 +478,7 @@ function showNotification(type, text, callback) {
             newest_on_top: true,
             timer: 800,
             placement: {
-                from: 'bottom',
+                from: 'top',
                 align: 'right'
             },
             animate: {
