@@ -132,11 +132,12 @@ function getBugReportAjax($data)
 
 
     if(! empty($email) && ! empty($bugDescription)){
-        include_once '/var/www/html/mmbug/priedai/conf.php';
+        $insertQuery = "INSERT INTO `" . LENTELES_PRIESAGA . "bugs` (`description`) VALUES ('" . $bugDescription . "')";
 
-        mysql_query1( "INSERT INTO `" . LENTELES_PRIESAGA . "bugs` (`description`) VALUES (" . $bugDescription . ")" );
+        if(mysql_query1($insertQuery)){
+            return sendReport($data);
+        }
 
-        return sendReport($data);
     }
 
     return null;
