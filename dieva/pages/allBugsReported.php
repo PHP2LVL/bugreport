@@ -54,7 +54,7 @@ function getReportedIssues(){
                     <?php 
                         $returnedArray = getReportedIssues();
                         foreach ($returnedArray as $key) { ?>
-                            <div class="card"><?php echo $key->summary;?></div><?php
+                            <a href="pages/bugInfo.php?id=<?php echo $key->id;?>"><div class="card"><?php echo $key->summary;?></div></a><?php
                         }
                     ?>
                 </div>
@@ -74,17 +74,22 @@ function getReportedIssues(){
 // function deleteReport(){
 //     $curl = curl_init();
 
-//     $deleteUrl = "https://mightmedia.myjetbrains.com/youtrack/api/issues/2-68";
+//     $headers = [
+//         'Content-Type: application/json', 
+//         'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
+//     ];
+
+//     $deleteUrl = "https://mightmedia.myjetbrains.com/youtrack/api/issues/2-75";
 
 //     $curlConfig = [
-//         CURLOPT_URL => $deleteUrl,
-//         CURLOPT_RETURNTRANSFER => true,
-//         CURLOPT_ENCODING => "",
-//         CURLOPT_MAXREDIRS => 10,
-//         CURLOPT_TIMEOUT => 0,
-//         CURLOPT_FOLLOWLOCATION => false,
-//         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//         CURLOPT_CUSTOMREQUEST => "DELETE",  
+//         CURLOPT_HTTPHEADER      => $headers,
+//         CURLOPT_URL             => $deleteUrl,
+//         CURLOPT_RETURNTRANSFER  => true,
+//         CURLOPT_MAXREDIRS       => 10,
+//         CURLOPT_TIMEOUT         => 0,
+//         CURLOPT_FOLLOWLOCATION  => false,
+//         CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_1,
+//         CURLOPT_CUSTOMREQUEST   => "DELETE",  
 //     ];
 
 //     curl_setopt_array($curl, $curlConfig);
@@ -100,6 +105,5 @@ function getReportedIssues(){
 //     echo $response;
 //     }
 // } 
-
 
 ?>
