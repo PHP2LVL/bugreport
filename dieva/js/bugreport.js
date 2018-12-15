@@ -107,6 +107,7 @@ if(bugReportForm) {
     
         postAjax(ajaxUrl, bugReportData, function(response) {
             if(response != null) {
+                // console.log(response);
                 showNotification('success', 'All good');
                 setTimeout(location.reload.bind(location), 2000);
             } else {

@@ -131,15 +131,18 @@ function getBugReportAjax($data)
     }';
 
 
-    if(! empty($email) && ! empty($bugDescription)){
-        $insertQuery = "INSERT INTO `" . LENTELES_PRIESAGA . "bugs` (`description`) VALUES ('" . $bugDescription . "')";
+    if(!empty($email) && !empty($bugDescription)){
 
-        if(mysql_query1($insertQuery)){
-            return sendReport($data);
+        if($sendResponse = sendReport($data)){
+            $issueArray = json_decode($sendResponse, true);
+            $issueId = $issueArray['id'];
+            // var_dump($issueId);
+            $insertQuery = "INSERT INTO `" . LENTELES_PRIESAGA . "bugs`(`description`, `report_id`) VALUES ('$bugDescription','$issueId')";
+            if(mysql_query1($insertQuery)){
+                return sendReport($data);
+            }
         }
-
     }
-
     return null;
 }
 

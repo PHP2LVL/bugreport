@@ -54,7 +54,7 @@ function getReportedIssues(){
                     <?php 
                         $returnedArray = getReportedIssues();
                         foreach ($returnedArray as $key) { ?>
-                            <a href="pages/bugInfo.php?id=<?php echo $key->id;?>"><div class="card"><?php echo $key->summary;?></div></a><?php
+                            <a href="pages/bugInfo.php?id=<?php echo $key->id;?>"><div class="card"><?php echo $key->summary;?></div></a><?php                            
                         }
                     ?>
                 </div>
