@@ -1,3 +1,10 @@
+<?php
+if (!empty ($_GET) && isset($_GET['x']) && isset($_GET['y'])){
+    ?>
+        <div class="btn bg-red btn-circle-lg new-div" style="left: <?php echo $_GET['x']?>px; top: <?php echo $_GET['y'] ?>px;"><i class="material-icons add">report_problem</i></div>
+        <!-- <div class="bug-report-cursor"></div> -->
+    <?php } ?>
+   
     <!-- Bootstrap Core Js -->
     <script src="themes/material/plugins/bootstrap/js/bootstrap.js"></script>
 
