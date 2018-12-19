@@ -10,7 +10,7 @@ $adminMenu = [
     'users'         => $adminDir . '/pages/users.php', 
     'bans'          => $adminDir . '/pages/bans.php',
     'logs'          => $adminDir . '/pages/logs.php',
-    'bugs'          => $adminDir . '/pages/allBugsReported.php' 
+    'bugs'          => $adminDir . '/pages/allBugsReported.php'
 ];
 
 $adminExtensionsMenu = [

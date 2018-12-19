@@ -1,10 +1,11 @@
 <?php
 
 /**
- * from internet to get browser DATA
- *
+ * Collects browsers version and OS
+ * 
  * @return array
  */
+
 function getBrowser(){
     $u_agent = $_SERVER['HTTP_USER_AGENT'];
     $bname = 'Unknown';
@@ -89,13 +90,16 @@ function getBrowser(){
 
 }
 
-
 /**
+ * Collects all data for report, uses sendReport() function so 
+ * send issue to youtrak and inserts issue ID and desciprion to local DB.
+ * 
  * @param $data
- * @return array
+ * 
+ * @return string | null
  */
-function getBugReportAjax($data)
-{
+
+function getBugReportAjax($data){
     $bugDescription = $data['bugReportInfo'];
     $ip             = $_SERVER['REMOTE_ADDR']; // USERIO IP
     $mmVersion      = $data['currentVersion'];
@@ -146,12 +150,14 @@ function getBugReportAjax($data)
     return null;
 }
 
+
+// Sends reported issue with API to youtrak
 function sendReport($data){
     $headers = [
         'Content-Type: application/json', 
         'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
     ];
-    
+
     $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues';
 
     // open connection
@@ -183,3 +189,121 @@ function sendReport($data){
     return $response;
 }
 
+
+// RETURNS ALL REPORTED BUGS FROM YOUTRACK
+function getReportedIssues(){
+
+    $headers = [
+        'Content-Type: application/json', 
+        'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
+    ];
+
+    $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues?fields=id,summary,description';
+
+
+    $curl = curl_init();
+    $curlConfig = [
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_URL             => $url,
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_MAXREDIRS       => 10,
+        CURLOPT_TIMEOUT         => 30,
+        CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST   => "GET",          
+        // not secure stuff
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYPEER => 0
+    ];
+
+    curl_setopt_array($curl, $curlConfig);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    
+    curl_close($curl);
+    
+    if ($err) {
+      echo "cURL Error #:" . $err;
+    } else {
+        $info = json_decode($response);        
+    }
+    return $info;
+}
+
+
+// ISSUES TRINIMO FUNKCIJA TIK YOUTRACK'e || Prideti tuo paciu trinima is DB
+// URL'o gale issitraukti kiekvieno issue ID, kad trinti ta issue ant kurio paspaudi
+function deleteReport(){
+    $curl = curl_init();
+
+    $headers = [
+        'Content-Type: application/json', 
+        'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
+    ];
+
+    $deleteUrl = "https://mightmedia.myjetbrains.com/youtrack/api/issues/2-75";
+
+    $curlConfig = [
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_URL             => $deleteUrl,
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_MAXREDIRS       => 10,
+        CURLOPT_TIMEOUT         => 0,
+        CURLOPT_FOLLOWLOCATION  => false,
+        CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST   => "DELETE",  
+    ];
+
+    curl_setopt_array($curl, $curlConfig);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    if ($err) {
+    echo "cURL Error #:" . $err;
+    } else {
+    echo $response;
+    }
+} 
+
+
+// $bugId = $_GET['id'];
+// Istraukiamas issue is youtrak'o pagal GET['id']
+function getReportedIssueInfo($issueId){
+    
+    $headers = [
+        'Content-Type: application/json', 
+        'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
+    ];
+
+    $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues/'.$issueId.'?fields=created,updated,summary,description';
+
+    $curl = curl_init();
+    $curlConfig = [
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_URL             => $url,
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_MAXREDIRS       => 10,
+        CURLOPT_TIMEOUT         => 30,
+        CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST   => "GET",          
+        // not secure stuff
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYPEER => 0
+    ];
+
+    curl_setopt_array($curl, $curlConfig);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    
+    curl_close($curl);
+    
+    if ($err) {
+      echo "cURL Error #:" . $err;
+    } else {
+        return $response;               
+    }
+}
