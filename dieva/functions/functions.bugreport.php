@@ -278,7 +278,7 @@ function getReportedIssueInfo($issueId){
         'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB'    
     ];
 
-    $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues/'.$issueId.'?fields=created,updated,summary,description';
+    $url = 'https://mightmedia.myjetbrains.com/youtrack/api/issues/'.$issueId.'?fields=created,updated,resolved,summary,description';
 
     $curl = curl_init();
     $curlConfig = [

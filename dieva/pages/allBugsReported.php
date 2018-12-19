@@ -20,21 +20,27 @@ if(isset($url['item'])){
                             <?php
                                 $reportedBug = mysql_query1( "SELECT * FROM `" . LENTELES_PRIESAGA . "bugs` WHERE `id`=$bugId LIMIT 1" );
 
-                                echo $reportedBug['description'] . '<br>';
+                                echo '<strong>Klaidos aprašymas:</strong> ' . $reportedBug['description'] . '<br>';
                                 $issueId = $reportedBug['report_id'];
                                 $testas = getReportedIssueInfo($issueId);
                                 $info = json_decode($testas, true);
 
                                 $mil = $info['created'];
                                 $seconds = $mil / 1000;
-                                echo 'Uzregistruota - ' . date("Y-m-d H:m:s", $seconds) . '<br>';
+                                echo '<strong>Užregistruota -</strong> ' . date("Y-m-d H:i:s", $seconds) . '<br>';
                                 
                                 $mil2 = $info['updated'];
                                 $seconds2 = $mil2 / 1000;
-                                echo 'Atnaujinta - ' . date("Y-m-d H:m:s", $seconds2) . '<br>';
+                                echo '<strong>Atnaujinta -</strong> ' . date("Y-m-d H:i:s", $seconds2) . '<br>';
                                 
-                                echo 'Statusas - ' . '<br>';
-                                round(microtime(true) * 1000); // Current time in ms
+                                if($info['resolved'] != null){                                    
+                                    echo '<strong>Statusas:</strong> ';?><span class="label bg-green"><?php echo 'Sutvarkyta';?></span><?php
+                                } else if($info['updated'] > $info['created']){
+                                    echo '<strong>Statusas:</strong> ';?><span class="label bg-orange"><?php echo 'Tvarkoma';?></span><?php
+                                } else if ($info['created'] == $info['updated']){
+                                    echo '<strong>Statusas:</strong> ';?><span class="label bg-red"><?php echo 'Užregistruota';?></span><?php
+                                }
+
                             ?>
                         </div>
                     </div>
