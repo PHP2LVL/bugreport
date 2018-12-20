@@ -146,8 +146,8 @@ function getBugReportAjax($data){
     //     'x-coordinates' => $cordX,
     //     'y-coordinates' => $cordY
     // ];
-
-    $bugInfo = '*IP:* ' . $ip . '\n*Url:* ' . $activelink . '\n*Screen:* ' . $screenRes . '\n*Theme:* ' . $themeVersion . '\n*Browser:* ' . $yourbrowser . '\n*Version:* ' . $mmVersion . '\n*Email:* ' . $email . '\n*X-coordinates:* ' . $cordX . '\n*Y-coordinates:* ' . $cordY . '\n*Description:* ' . $bugDescription;
+    $activeUrl = 'http://www.mightmedia.lt;' . 'x,' . $cordX . ';y,' . $cordY;
+    $bugInfo = '*IP:* ' . $ip . '\n*Url:* ' . $activelink . '\n*Active Url:* ' . $activeUrl . '\n*Screen:* ' . $screenRes . '\n*Theme:* ' . $themeVersion . '\n*Browser:* ' . $yourbrowser . '\n*Version:* ' . $mmVersion . '\n*Email:* ' . $email . '\n*X-coordinates:* ' . $cordX . '\n*Y-coordinates:* ' . $cordY . '\n*Description:* ' . $bugDescription;
     $data = '{
         "project":{"id":"0-0"},
         "summary":"' . date('Y-m-d H:i:s') . '",

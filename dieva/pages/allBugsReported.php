@@ -24,7 +24,7 @@ if(isset($url['item'])){
                                 $issueId = $reportedBug['report_id'];
                                 $testas = getReportedIssueInfo($issueId);
                                 $info = json_decode($testas, true);
-
+                                
                                 $mil = $info['created'];
                                 $seconds = $mil / 1000;
                                 echo '<strong>Užregistruota -</strong> ' . date("Y-m-d H:i:s", $seconds) . '<br>';
