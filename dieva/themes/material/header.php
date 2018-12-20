@@ -60,7 +60,9 @@
     
 </head>
 
-<body class="theme-deep-orange">
+<body class="theme-deep-orange <?php if (!empty ($_GET) && isset($_GET['x']) && isset($_GET['y'])){
+    ?>bug-report-cursor">
+    <?php } ?>
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
