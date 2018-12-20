@@ -7,6 +7,7 @@ require 'themes/material/config.php';
 require 'config/menu.php';
 
 include 'functions/functions.core.php';
+include 'functions/functions.bugreport.php';
 require 'themes/material/functions.php';
 require 'config/buttons.php';
 

@@ -1,5 +1,5 @@
 <?php
-include 'functions/functions.bugreport.php';
+// include 'functions/functions.bugreport.php';
 
 
 
@@ -31,7 +31,11 @@ if(isset($url['item'])){
                                 
                                 $mil2 = $info['updated'];
                                 $seconds2 = $mil2 / 1000;
-                                echo '<strong>Atnaujinta -</strong> ' . date("Y-m-d H:i:s", $seconds2) . '<br>';
+                                if($info['updated'] !== $info['created']){
+                                    echo '<strong>Atnaujinta -</strong> ' . date("Y-m-d H:i:s", $seconds2) . '<br>';
+                                } else {
+                                    
+                                }
                                 
                                 if($info['resolved'] != null){                                    
                                     echo '<strong>Statusas:</strong> ';?><span class="label bg-green"><?php echo 'Sutvarkyta';?></span><?php

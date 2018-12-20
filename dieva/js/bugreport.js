@@ -89,6 +89,7 @@ if(bugReportForm) {
         e.preventDefault();
         var cordX = document.querySelector('[name="bug-x"]').value;
         var cordY = document.querySelector('[name="bug-y"]').value;
+        var currentUrl = document.querySelector('[name="currentUrl"]').value;
         var bugReportInfo = document.querySelector('.form-container textarea').value;    
         var serializedData = serializeAjax(bugReportForm);
     
@@ -100,9 +101,9 @@ if(bugReportForm) {
             currentVersion: currentVersion,
             bugReportInfo: bugReportInfo,
             action: 'getBugReportAjax',
-            action_functions: 'bugreport',
             formData: serializedData,
-            themeVersion: themeVersion
+            themeVersion: themeVersion,
+            currentUrl: currentUrl
         };
     
         postAjax(ajaxUrl, bugReportData, function(response) {

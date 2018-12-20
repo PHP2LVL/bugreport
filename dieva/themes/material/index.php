@@ -126,7 +126,7 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <script type="text/javascript">
 
             var bugReportUserEmail         = '<?php echo $user['email']; ?>'; 
-            var currentVersion             =  <?php echo versija(); ?>;
+            var currentVersion             = '<?php echo versija(); ?>';
             var ajaxUrl                    = '<?php echo url( "?id,999;a,ajax;" ); ?>';
             var themeVersion               = '<?php echo $conf['Stilius'];?>';
             
@@ -142,7 +142,6 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <?php adminPages(); ?>
     </div>
 </section>
-
 <div class="form-popup">
     <form action="" method="POST" class="form-container bug-report-form">
         <label for="bugdesc">
@@ -153,6 +152,8 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
         <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
         <input type="hidden" class="bugPos" name="bug-x" value="0">
         <input type="hidden" class="bugPos" name="bug-y" value="0">
+        <?php $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+        <input type="hidden" class="url" name="currentUrl" value="<?php echo $currentUrl; ?>">
     </form>
 </div>
 
