@@ -92,21 +92,21 @@ function getBrowser(){
 
 
 
-function url_origin( $s, $use_forwarded_host = false ){
-    $ssl      = ( ! empty( $s['HTTPS'] ) && $s['HTTPS'] == 'on' );
-    $sp       = strtolower( $s['SERVER_PROTOCOL'] );
-    $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
-    $port     = $s['SERVER_PORT'];
-    $port     = ( ( ! $ssl && $port=='80' ) || ( $ssl && $port=='443' ) ) ? '' : ':'.$port;
-    $host     = ( $use_forwarded_host && isset( $s['HTTP_X_FORWARDED_HOST'] ) ) ? $s['HTTP_X_FORWARDED_HOST'] : ( isset( $s['HTTP_HOST'] ) ? $s['HTTP_HOST'] : null );
-    $host     = isset( $host ) ? $host : $s['SERVER_NAME'] . $port;
-    return $protocol . '://' . $host;
-}
+// function url_origin( $s, $use_forwarded_host = false ){
+//     $ssl      = ( ! empty( $s['HTTPS'] ) && $s['HTTPS'] == 'on' );
+//     $sp       = strtolower( $s['SERVER_PROTOCOL'] );
+//     $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
+//     $port     = $s['SERVER_PORT'];
+//     $port     = ( ( ! $ssl && $port=='80' ) || ( $ssl && $port=='443' ) ) ? '' : ':'.$port;
+//     $host     = ( $use_forwarded_host && isset( $s['HTTP_X_FORWARDED_HOST'] ) ) ? $s['HTTP_X_FORWARDED_HOST'] : ( isset( $s['HTTP_HOST'] ) ? $s['HTTP_HOST'] : null );
+//     $host     = isset( $host ) ? $host : $s['SERVER_NAME'] . $port;
+//     return $protocol . '://' . $host;
+// }
 
 
-function full_url( $s, $use_forwarded_host = false ){
-    return url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
-}
+// function full_url( $s, $use_forwarded_host = false ){
+//     return url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
+// }
 
 
 
@@ -329,3 +329,47 @@ function getReportedIssueInfo($issueId){
 }
 
 
+function attachFile(){
+    $url = "https://mightmedia.myjetbrains.com/youtrack/api/issues/2-273/attachment";
+    $headers = [
+        'Authorization: Bearer perm:bWlnaHRtZWRpYWJ1Zw==.YnVncmVwb3J0.JOkYoJJswIwwjrD4jCiHnGsMHvvnOB',
+        'Content-Length: 7839',
+        'Connection: keep-alive',
+        'Content-Type: multipart/form-data;',
+        'Content-Type: image/png',
+        'Content-Transfer-Encoding: binary',
+        'Content-Disposition: form-data; name="postman.png"; filename="postman.png"'    
+    ];
+
+    $data = [
+        'name'=>'@D:\postman.png;'
+    ];
+
+    $ch = curl_init();
+
+    $curlConfig = [
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_URL             => $url,
+        CURLOPT_POST            => true,
+        CURLOPT_RETURNTRANSFER  => true,
+        CURLOPT_POSTFIELDS      => $data,
+        // not secure stuff
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYPEER => 0
+    ];
+
+    curl_setopt_array($ch, $curlConfig);
+
+    $response = curl_exec($ch);
+    $resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($resultStatus != 200) {
+        return curl_error($ch);
+    }
+    
+    //close connection
+    curl_close($ch);
+
+    return $response;
+
+}

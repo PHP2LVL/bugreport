@@ -143,13 +143,14 @@ $user = getUserMail($_SESSION[SLAPTAS]['id']);
     </div>
 </section>
 <div class="form-popup">
-    <form action="" method="POST" class="form-container bug-report-form">
+    <form action="" method="POST" enctype="multipart/form-data" class="form-container bug-report-form">
         <label for="bugdesc">
             <b>Bug description</b>
         </label>
         <textarea rows="15" cols="32" name="bugdesc" required></textarea>
         <button type="submit" name="submit-report" class="bugbtn">Submit</button>
         <button type="button" name="cancel-report" class="bugbtn cancel" onclick="closeForm()">Close</button>
+        <!-- <input type="file" name="attachment"> -->
         <input type="hidden" class="bugPos" name="bug-x" value="0">
         <input type="hidden" class="bugPos" name="bug-y" value="0">
         <?php $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
